@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>New Beer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form #newBeer="ngForm" (ngSubmit)="addBeer(newBeer)">
+    <ion-item>
+      <ion-input required type="text" placeholder="Beer Name" name="name" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="number" placeholder="Degree" name="degree" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="number" placeholder="Price" name="price" ngModel></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Resume"  name="resume" ngModel></ion-input>
+    </ion-item>
+    <div text-center>
+      <button ion-button large type="submit">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </div>
+  </form>
+</ion-content>
