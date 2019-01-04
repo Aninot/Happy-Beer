@@ -19,7 +19,6 @@ export class AddBeerPage implements OnInit {
     this.beerService.addBeer(form.value).subscribe(
       beer => { console.log(beer); }
     )
-    console.log(form.value.name);
   }
 
   onSubmit(form){

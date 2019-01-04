@@ -27,10 +27,11 @@ private extractData(res: Response) {
   return body || { };
 }
 getBeerByKey(key: string): Observable<Beer[]>{
-  console.log('https://beers-cf53e.firebaseio.com/beers/'+key+'.json')
   return this.http.get<Beer[]>('https://beers-cf53e.firebaseio.com/beers/'+key+'.json')
   .pipe(
-    tap(data => JSON.stringify(data)),
+    tap(data => {
+      JSON.stringify(data);console.log("service:"+data);
+    }),
     catchError(this.handleError('getBeerByKey', []))
   );
 }

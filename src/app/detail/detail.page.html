@@ -13,13 +13,21 @@
     <ion-list>
         <ion-item>
             <ion-icon name="beer" slot="start"></ion-icon>
-              hibou
+              {{ beer?.name }}
             <div class="item-note" slot="end">
-              2€
+              {{ beer?.price }}€
             </div>
           </ion-item>
     </ion-list>
-    
+    <div class="item-note" text-center>
+        {{ beer?.degree }}%
+      </div>
+    <div class="item-note" text-center>
+        {{ beer?.resume }}
+    </div>
+    <div style="margin-left:50px">
+      <ion-img src="{{ beer?.picture }}" style="width: 160px; height: 160px;" ></ion-img>
+    </div>
 </ion-content>
 <ion-footer>
     <ion-item routerLink="/list/">

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../rest-api.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
+import { Beer } from '../beer';
 
 @Component({
   selector: 'app-detail',
@@ -18,14 +19,15 @@ export class DetailPage implements OnInit {
 }
 
   ngOnInit() {
-    this.beerService.getBeerByKey(this.key);
+    this.getBeerByKey(this.key);
   } 
-  
+
   getBeerByKey(key){
     this.beerService.getBeerByKey(key)
     .subscribe(data => {
      this.beer = data;
-     console.log(typeof(this.beer));
+     console.log(this.beer);
+     console.log(data);
     });
 }
 }
